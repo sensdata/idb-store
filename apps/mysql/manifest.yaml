@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: mysql
+display_name: MySQL
+category: database
+tags:
+  - database
+title: MySQL
+description: MySQL - Open-source relational database management system
+vendor:
+  name: MySQL
+  url: Docker hub url
+packager:
+  name: Sensdata
+  url: Sensdata url

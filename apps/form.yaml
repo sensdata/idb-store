@@ -1,0 +1,92 @@
+form:
+  - key: ""
+    name: "iDB_name"
+    label: "Compose Project Name"
+    type: "string"
+    default: "__name__"
+    required: true
+    hint: "Provide the name of the iDB instance."
+    validation:
+      min_length: 3
+      max_length: 30
+    refer: "https://docs.docker.com/..."
+
+  - name: "iDB_service_name"
+    label: "Service Name"
+    type: "string"
+    default: "__mysql__"
+    required: true
+    hint: "Specify the name of the database service."
+    validation:
+      pattern: "^[a-zA-Z0-9_]+$"  # 仅允许字母、数字和下划线
+
+  - name: "iDB_service_container_name"
+    label: "Container Name"
+    type: "string"
+    default: "__iDB_service_container_name__"
+    required: true
+    hint: "Enter the name for the container instance."
+    validation:
+      min_length: 3
+      max_length: 30
+
+  - name: "iDB_service_mysql_root_password"
+    label: "MySQL Root Password"
+    type: "password"
+    default: "__iDB_service_mysql_root_password__"
+    required: true
+    hint: "Set a secure password for the MySQL root user."
+    validation:
+      min_length: 8
+      contains:
+        - "uppercase"
+        - "number"
+
+  - name: "iDB_service_port"
+    label: "Service Port"
+    type: "number"
+    default: 3306
+    required: true
+    hint: "Port for service access."
+    validation:
+      min_value: 1024
+      max_value: 65535
+
+  - name: "iDB_service_network_mode"
+    label: "Network Mode"
+    type: "select"
+    options:
+      - "bridge"
+      - "host"
+      - "none"
+    default: "bridge"
+    required: true
+    hint: "Choose the network mode for the service container."
+
+  - name: "iDB_service_conf_path"
+    label: "Configuration Path"
+    type: "string"
+    default: "./conf/"
+    required: true
+    hint: "Path for configuration files."
+
+  - name: "iDB_service_data_path"
+    label: "Data Storage Path"
+    type: "string"
+    default: "./data/"
+    required: true
+    hint: "Directory path for data storage."
+
+  - name: "iDB_service_log_path"
+    label: "Log Storage Path"
+    type: "string"
+    default: "./log/"
+    required: true
+    hint: "Directory path for storing logs."
+
+  - name: "iDB_service_cert_path"
+    label: "Certificate Path"
+    type: "string"
+    default: "/some/idb/certmanager/"
+    required: false
+    hint: "Path for certificates used by the container."

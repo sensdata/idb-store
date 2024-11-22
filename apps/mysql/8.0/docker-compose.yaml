@@ -9,7 +9,7 @@ services:
     ports:
       - ${iDB_service_port}:"3306"
     volumes:
-      - ${iDB_service_conf_path}my.cnf:/etc/my.cnf
+      - ${iDB_service_config_path}my.cnf:/etc/my.cnf
       - ${iDB_service_data_path}:/var/lib/mysql/
       - ${iDB_service_log_path}:/var/log/mysql/
       - ${iDB_service_cert_path}:/data/cert/

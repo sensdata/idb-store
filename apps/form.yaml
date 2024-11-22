@@ -63,10 +63,10 @@ form:
     required: true
     hint: "Choose the network mode for the service container."
 
-  - name: "iDB_service_conf_path"
+  - name: "iDB_service_config_path"
     label: "Configuration Path"
     type: "string"
-    default: "./conf/"
+    default: "./config/"
     required: true
     hint: "Path for configuration files."
 

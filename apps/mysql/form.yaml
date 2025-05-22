@@ -1,6 +1,5 @@
 form:
-  - key: ""
-    name: "iDB_compose_name"
+  - name: "iDB_compose_name"
     label: "Compose Project Name"
     type: "string"
     default: "__name__"
@@ -42,7 +41,7 @@ form:
     validation:
       min_length: 8
       max_length: 128
-      pattern: '^((?=.*[A-Z])(?=.*\d)[\w!@#$%^&*()\-+=\[\]{}|;:\'",.<>?/\\~`]+)$'
+      pattern: '^((?=.*[A-Z])(?=.*\d)[\w!@#$%^&*()\-+=\[\]{}|;:''",.<>?/\\~`]+)$'
 
   - name: "iDB_service_port"
     label: "Service Port"

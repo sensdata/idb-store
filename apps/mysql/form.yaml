@@ -1,6 +1,7 @@
 form:
   - name: "iDB_compose_name"
     label: "Compose Project Name"
+    key: "Compose Name"
     type: "string"
     default: "__name__"
     required: true
@@ -12,6 +13,7 @@ form:
 
   - name: "iDB_service_name"
     label: "Service Name"
+    key: "Service Name"
     type: "string"
     default: "__mysql__"
     required: false
@@ -23,6 +25,7 @@ form:
 
   - name: "iDB_service_container_name"
     label: "Container Name"
+    key: "Container Name"
     type: "string"
     default: "__iDB_service_container_name__"
     required: false
@@ -34,6 +37,7 @@ form:
 
   - name: "iDB_service_mysql_root_password"
     label: "MySQL Root Password"
+    key: "Root Password"
     type: "password"
     default: "__iDB_service_mysql_root_password__"
     required: true
@@ -45,6 +49,7 @@ form:
 
   - name: "iDB_service_port"
     label: "Service Port"
+    key: "Port"
     type: "number"
     default: 3306
     required: true
@@ -55,6 +60,7 @@ form:
 
   - name: "iDB_service_network_mode"
     label: "Network Mode"
+    key: "Network Mode"
     type: "select"
     options:
       - "bridge"
@@ -68,6 +74,7 @@ form:
 
   - name: "iDB_service_config_path"
     label: "Configuration Path"
+    key: "Conf Path"
     type: "string"
     default: "./config/"
     required: true
@@ -75,6 +82,7 @@ form:
 
   - name: "iDB_service_data_path"
     label: "Data Storage Path"
+    key: "Data Path"
     type: "string"
     default: "./data/"
     required: true
@@ -82,6 +90,7 @@ form:
 
   - name: "iDB_service_log_path"
     label: "Log Storage Path"
+    key: "Log Path"
     type: "string"
     default: "./log/"
     required: true
@@ -89,6 +98,7 @@ form:
 
   - name: "iDB_service_cert_path"
     label: "Certificate Path"
+    key: "Cert Path"
     type: "string"
     default: "/some/idb/certmanager/"
     required: false

@@ -76,7 +76,7 @@ form:
     label: "Configuration Path"
     key: "Conf Path"
     type: "string"
-    default: "./config/"
+    default: "/etc/mysql"
     required: true
     hint: "Path for configuration files."
 
@@ -84,7 +84,7 @@ form:
     label: "Data Storage Path"
     key: "Data Path"
     type: "string"
-    default: "./data/"
+    default: "/var/lib/mysql"
     required: true
     hint: "Directory path for data storage."
 
@@ -92,7 +92,7 @@ form:
     label: "Log Storage Path"
     key: "Log Path"
     type: "string"
-    default: "./log/"
+    default: "/var/log/mysql"
     required: true
     hint: "Directory path for storing logs."
 
@@ -100,6 +100,6 @@ form:
     label: "Certificate Path"
     key: "Cert Path"
     type: "string"
-    default: "/some/idb/certmanager/"
+    default: "/var/lib/mysql/cert"
     required: false
     hint: "Path for certificates used by the container."

@@ -3,7 +3,7 @@ form:
     label: "Compose Project Name"
     key: "Compose Name"
     type: "string"
-    default: "__name__"
+    default: "mysql8"
     required: true
     hint: "Provide the name of the iDB instance."
     validation:
@@ -15,7 +15,7 @@ form:
     label: "Service Name"
     key: "Service Name"
     type: "string"
-    default: "__mysql__"
+    default: "mysql8"
     required: false
     hint: "Specify the name of the database service."
     validation:
@@ -27,7 +27,7 @@ form:
     label: "Container Name"
     key: "Container Name"
     type: "string"
-    default: "__iDB_service_container_name__"
+    default: "mysql8"
     required: false
     hint: "Enter the name for the container instance."
     validation:
@@ -39,13 +39,13 @@ form:
     label: "MySQL Root Password"
     key: "Root Password"
     type: "password"
-    default: "__iDB_service_mysql_root_password__"
+    default: "mysql8.123456"
     required: true
     hint: "Set a secure password for the MySQL root user."
     validation:
-      min_length: 8
-      max_length: 128
-      pattern: '^((?=.*[A-Z])(?=.*\d)[\w!@#$%^&*()\-+=\[\]{}|;:''",.<>?/\\~`]+)$'
+      min_length: 6
+      max_length: 36
+      pattern: '^[A-Za-z0-9!@#$%^&*()_+=\[\]{}|;:''",.<>\/?-]{6,36}$'
 
   - name: "iDB_service_port"
     label: "Service Port"

@@ -31,15 +31,3 @@ services:
       net.idb.version: "8.0"
       net.idb.update_version: "40"
       net.idb.panel: "mysqlmanager"
-
-#services:
-#  my_service:
-#    image: my_image
-#    networks:
-#      - my_custom_network
-#    environment:
-#      - MY_ENV_VAR=example
-
-#networks:
-#  my_custom_network:
-#    external: true  # 指定使用已存在的网络

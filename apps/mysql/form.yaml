@@ -69,27 +69,27 @@ form:
   - name: "iDB_service_config_path"
     label: "Configuration Path"
     type: "string"
-    default: "/etc/mysql"
+    default: "/opt/idb/docker/mysql8/conf"
     required: true
     hint: "Path for configuration files."
 
   - name: "iDB_service_data_path"
     label: "Data Storage Path"
     type: "string"
-    default: "/var/lib/mysql"
+    default: "/opt/idb/docker/mysql8/data"
     required: true
     hint: "Directory path for data storage."
 
   - name: "iDB_service_log_path"
     label: "Log Storage Path"
     type: "string"
-    default: "/var/log/mysql"
+    default: "/opt/idb/docker/mysql8/log"
     required: true
     hint: "Directory path for storing logs."
 
   - name: "iDB_service_cert_path"
     label: "Certificate Path"
     type: "string"
-    default: "/var/lib/mysql/cert"
+    default: "/opt/idb/docker/mysql8/cert"
     required: false
     hint: "Path for certificates used by the container."

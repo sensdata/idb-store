@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: postgresql
+display_name: PostgreSQL
+category: database
+tags:
+  - database
+title: PostgreSQL
+description: PostgreSQL - Open-source object-relational database system
+vendor:
+  name: PostgreSQL
+  url: Docker hub url
+packager:
+  name: Sensdata
+  url: Sensdata url

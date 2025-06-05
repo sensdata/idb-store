@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17.5-alpine
+    container_name: ${iDB_service_container_name}
+    restart: always
+    environment:
+      POSTGRES_ROOT_PASSWORD: ${iDB_service_postgresql_root_password}
+    network_mode: ${iDB_service_network_mode}
+    ports:
+      - ${iDB_service_port}:5432
+    volumes:
+      - ${iDB_service_data_path}:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-p", "5432", "-q", "-U", "postgres"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
+    labels:
+      net.idb.type: "app"
+      net.idb.name: "postgresql"
+      net.idb.version: "17"
+      net.idb.update_version: "5"
+      net.idb.panel: "postgresqlmanager"

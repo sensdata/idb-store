@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: mariadb
+display_name: MariaDB
+category: database
+tags:
+  - database
+title: MariaDB
+description: MariaDB is a popular open-source relational database management system, fully compatible with MySQL.
+vendor:
+  name: MariaDB
+  url: https://hub.docker.com/_/mariadb
+packager:
+  name: Sensdata
+  url: Sensdata url

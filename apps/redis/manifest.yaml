@@ -1,0 +1,16 @@
+manifest_version: 1
+type: app
+name: redis
+display_name: Redis
+category: database
+tags:
+  - database
+  - cache
+title: Redis
+description: Redis - An open-source, in-memory data structure store used as a database, cache, and message broker
+vendor:
+  name: Redis
+  url: Docker hub url
+packager:
+  name: Sensdata
+  url: Sensdata url

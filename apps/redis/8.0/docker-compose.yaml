@@ -1,0 +1,28 @@
+services:
+  redis:
+    image: redis:8.0.2
+    container_name: ${iDB_service_container_name}
+    restart: always
+    environment:
+      REDIS_ROOT_PASSWORD: ${iDB_service_redis_root_password}
+    network_mode: ${iDB_service_network_mode}
+    ports:
+      - ${iDB_service_port}:6379
+    volumes:
+      - ${iDB_service_config_path}/redis.conf:/etc/redis/redis.conf
+      - ${iDB_service_data_path}:/var/lib/redis
+      - ${iDB_service_log_path}:/var/log/redis
+      - ${iDB_service_cert_path}:/data/cert
+    command: >
+      sh -c '
+      if [ -z "$REDIS_ROOT_PASSWORD" ]; then
+        redis-server /etc/redis/redis.conf
+      else
+        redis-server /etc/redis/redis.conf --requirepass "$REDIS_ROOT_PASSWORD"
+      fi'
+    labels:
+      net.idb.type: "app"
+      net.idb.name: "redis"
+      net.idb.version: "8.0"
+      net.idb.update_version: "2"
+      net.idb.panel: "redismanager"

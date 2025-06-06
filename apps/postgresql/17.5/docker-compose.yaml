@@ -4,7 +4,7 @@ services:
     container_name: ${iDB_service_container_name}
     restart: always
     environment:
-      POSTGRES_ROOT_PASSWORD: ${iDB_service_postgresql_root_password}
+      - POSTGRES_ROOT_PASSWORD=${iDB_service_postgresql_root_password}
     network_mode: ${iDB_service_network_mode}
     ports:
       - ${iDB_service_port}:5432

@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: mongodb
+display_name: MongoDB
+category: database
+tags:
+  - database
+title: MongoDB
+description: MongoDB is a popular open-source NoSQL document database, designed for scalability and flexibility.
+vendor:
+  name: MongoDB
+  url: https://hub.docker.com/_/mongo
+packager:
+  name: Sensdata
+  url: Sensdata url

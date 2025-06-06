@@ -1,0 +1,19 @@
+services:
+  mongodb:
+    image: mongo:7.0.21
+    container_name: ${iDB_service_container_name}
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${iDB_service_mongodb_root_user}
+      MONGO_INITDB_ROOT_PASSWORD: ${iDB_service_mongodb_root_password}
+    network_mode: ${iDB_service_network_mode}
+    ports:
+      - ${iDB_service_port}:27017
+    volumes:
+      - ${iDB_service_data_path}:/data/db
+    labels:
+      net.idb.type: "app"
+      net.idb.name: "mongodb"
+      net.idb.version: "7.0"
+      net.idb.update_version: "21"
+      net.idb.panel: "postgresqlmanager"

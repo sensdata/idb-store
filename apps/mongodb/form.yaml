@@ -1,0 +1,85 @@
+form:
+  - name: "iDB_compose_name"
+    label: "Compose Project Name"
+    type: "string"
+    default: "mongodb"
+    required: true
+    hint: "Provide the name of the iDB instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_name"
+    label: "Service Name"
+    type: "string"
+    default: "mongodb"
+    required: false
+    hint: "Specify the name of the database service."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_container_name"
+    label: "Container Name"
+    type: "string"
+    default: "mongodb"
+    required: false
+    hint: "Enter the name for the container instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_mongodb_root_user"
+    label: "MongoDB Root User"
+    type: "string"
+    default: "root"
+    required: true
+    hint: "Set root user name."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_mongodb_root_password"
+    label: "MongoDB Root Password"
+    type: "password"
+    default: "mongodb.123456"
+    required: true
+    hint: "Set a secure password for the MongoDB root user."
+    validation:
+      min_length: 6
+      max_length: 36
+      pattern: '^[A-Za-z0-9!@#$%^&*()_+=\[\]{}|;:''",.<>\/?-]{6,36}$'
+
+  - name: "iDB_service_port"
+    label: "Service Port"
+    type: "number"
+    default: 5432
+    required: true
+    hint: "Port for service access."
+    validation:
+      min_value: 1024
+      max_value: 65535
+
+  - name: "iDB_service_network_mode"
+    label: "Network Mode"
+    type: "select"
+    options:
+      - "bridge"
+      - "host"
+      - "none"
+    default: "bridge"
+    required: true
+    hint: "Choose the network mode for the service container."
+    validation:
+      pattern: '^(bridge|host|none)$'
+
+  - name: "iDB_service_data_path"
+    label: "Data Storage Path"
+    type: "string"
+    default: "/opt/idb/docker/mongodb/data"
+    required: true
+    hint: "Directory path for data storage."

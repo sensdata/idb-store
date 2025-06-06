@@ -1,0 +1,30 @@
+services:
+  elasticsearch:
+    image: elasticsearch:8.18.2
+    container_name: ${iDB_service_container_name}
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=${iDB_service_elastic_password}
+      - ES_JAVA_OPTS=${iDB_service_elastic_java_opts}
+    network_mode: ${iDB_service_network_mode}
+    ports:
+      - "${iDB_service_port}:9200"
+    volumes:
+      - ${iDB_service_data_path}:/usr/share/elasticsearch/data
+      - ${iDB_service_backup_path}:/usr/share/elasticsearch/backup
+      - ${iDB_service_config_path}/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    labels:
+      net.idb.type: "app"
+      net.idb.name: "elasticsearch"
+      net.idb.version: "8.18"
+      net.idb.update_version: "2"
+      net.idb.panel: "elasticmanager"

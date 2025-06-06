@@ -1,0 +1,16 @@
+manifest_version: 1
+type: app
+name: elasticsearch
+display_name: Elasticsearch
+category: database
+tags:
+  - database
+  - search
+title: Elasticsearch
+description: Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.
+vendor:
+  name: Elastic
+  url: https://hub.docker.com/_/elasticsearch
+packager:
+  name: Sensdata
+  url: Sensdata url

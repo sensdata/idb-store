@@ -1,0 +1,63 @@
+form:
+  - name: "iDB_compose_name"
+    label: "Compose Project Name"
+    type: "string"
+    default: "phpmyadmin"
+    required: true
+    hint: "Provide the name of the iDB instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_name"
+    label: "Service Name"
+    type: "string"
+    default: "phpmyadmin"
+    required: false
+    hint: "Specify the name of the phpmyadmin service."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_container_name"
+    label: "Container Name"
+    type: "string"
+    default: "phpmyadmin"
+    required: false
+    hint: "Enter the name for the container instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_port"
+    label: "Service Port"
+    type: "number"
+    default: 9930
+    required: true
+    hint: "Port for service access."
+    validation:
+      min_value: 1024
+      max_value: 65535
+
+  - name: "iDB_service_network_mode"
+    label: "Network Mode"
+    type: "select"
+    options:
+      - "bridge"
+      - "host"
+      - "none"
+    default: "bridge"
+    required: true
+    hint: "Choose the network mode for the service container."
+    validation:
+      pattern: '^(bridge|host|none)$'
+
+  - name: "iDB_service_config_path"
+    label: "Configuration Path"
+    type: "string"
+    default: "/opt/idb/docker/phpmyadmin/conf.d"
+    required: true
+    hint: "Path for configuration files."

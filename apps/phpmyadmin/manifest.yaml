@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: phpmyadmin
+display_name: PHPMyAdmin
+category: database
+tags:
+  - database
+title: PHPMyAdmin
+description: PHPMyAdmin - Web interface for MySQL/MariaDB management
+vendor:
+  name: PHPMyAdmin
+  url: Docker hub url
+packager:
+  name: Sensdata
+  url: Sensdata url

@@ -1,0 +1,70 @@
+form:
+  - name: "iDB_compose_name"
+    label: "Compose Project Name"
+    type: "string"
+    default: "nginx"
+    required: true
+    hint: "Provide the name of the iDB instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_name"
+    label: "Service Name"
+    type: "string"
+    default: "nginx"
+    required: false
+    hint: "Specify the name of the nginx service."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_container_name"
+    label: "Container Name"
+    type: "string"
+    default: "nginx"
+    required: false
+    hint: "Enter the name for the container instance."
+    validation:
+      min_length: 3
+      max_length: 30
+      pattern: '^[a-zA-Z0-9_]+$'
+
+  - name: "iDB_service_port"
+    label: "Service Port"
+    type: "number"
+    default: 80
+    required: true
+    hint: "Port for service access."
+    validation:
+      min_value: 1024
+      max_value: 65535
+
+  - name: "iDB_service_network_mode"
+    label: "Network Mode"
+    type: "select"
+    options:
+      - "bridge"
+      - "host"
+      - "none"
+    default: "host"
+    required: true
+    hint: "Choose the network mode for the service container."
+    validation:
+      pattern: '^(bridge|host|none)$'
+
+  - name: "iDB_service_config_path"
+    label: "Configuration Path"
+    type: "string"
+    default: "./conf"
+    required: true
+    hint: "Path for configuration files."
+
+  - name: "iDB_service_log_path"
+    label: "Log Storage Path"
+    type: "string"
+    default: "./logs"
+    required: true
+    hint: "Directory path for storing logs."

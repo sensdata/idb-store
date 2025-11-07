@@ -1,0 +1,15 @@
+manifest_version: 1
+type: app
+name: nginx
+display_name: Nginx
+category: web
+tags:
+  - web
+title: Nginx
+description: Nginx - High performance web server
+vendor:
+  name: Nginx
+  url: Docker hub url
+packager:
+  name: Sensdata
+  url: Sensdata url

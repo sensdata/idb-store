@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:1.28
+    container_name: ${iDB_service_container_name}
+    restart: always
+    network_mode: ${iDB_service_network_mode}
+    volumes:
+      - ${iDB_service_config_path}:/etc/nginx
+      - ${iDB_service_log_path}:/var/log/nginx

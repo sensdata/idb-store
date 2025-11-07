@@ -7,3 +7,9 @@ services:
     volumes:
       - ${iDB_service_config_path}:/etc/nginx
       - ${iDB_service_log_path}:/var/log/nginx
+    labels:
+      net.idb.type: "app"
+      net.idb.name: "nginx"
+      net.idb.version: "1"
+      net.idb.update_version: "28"
+      net.idb.panel: ""

@@ -58,20 +58,20 @@ form:
   - name: "iDB_service_config_path"
     label: "Configuration Path"
     type: "string"
-    default: "./conf"
+    default: "/opt/idb/docker/nginx/conf"
     required: true
     hint: "Directory path for configuration file."
 
   - name: "iDB_service_log_path"
     label: "Log Storage Path"
     type: "string"
-    default: "./logs"
+    default: "/opt/idb/docker/nginx/logs"
     required: true
     hint: "Directory path for storing logs."
   
   - name: "iDB_service_assets_path"
     label: "Assets Path"
     type: "string"
-    default: "./assets"
+    default: "/opt/idb/docker/nginx/conf"
     required: true
     hint: "Path for static assets."

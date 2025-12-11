@@ -68,10 +68,3 @@ form:
     default: "/opt/idb/docker/nginx/logs"
     required: true
     hint: "Directory path for storing logs."
-  
-  - name: "iDB_service_assets_path"
-    label: "Assets Path"
-    type: "string"
-    default: "/opt/idb/docker/nginx/conf"
-    required: true
-    hint: "Path for static assets."
